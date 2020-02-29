@@ -1,0 +1,628 @@
+/********* FONT STYLE *******/
+@font-face {
+  font-family: "OpenSans-bold";
+  src: url("../fonts/Open-sans/OpenSans-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "OpenSans-light";
+  src: url("../fonts/Open-sans/OpenSans-Light.ttf") format('truetype');
+  font-size: 12px;
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../fonts/Open-sans/OpenSans-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "OpenSans-Semibold";
+  src: url("../fonts/Open-sans/OpenSans-SemiBold.ttf") format('truetype');
+}
+
+.font-family-bold {
+  font-family: "OpenSans-Bold", "OpenSans-light", sans-serif !important;
+}
+
+.font-family-light {
+  font-family: "OpenSans-Light", "OpenSans-regular", sans-serif !important;
+}
+
+.font-family-regular {
+  font-family: "OpenSans-Regular", "OpenSans-light", sans-serif !important;
+}
+
+.font-family-semi-bold {
+  font-family: "OpenSans-Semibold", "OpenSans-light", sans-serif !important;
+}
+
+
+
+/**********COLORS STYLE************/
+$color-grey: #f1f1f1;
+$color-icons: #949494;
+$color-silver: #858585;
+$color-button: #5a077d;
+$color-green: #45d881;
+
+
+/**************MIXINS STYLE*******/
+@mixin mask-image($url) {
+  -webkit-mask-image: url($url);
+  mask-image: url($url);
+}
+
+
+/***************ICONS STYLE**********/
+.icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: sub;
+  mask: {
+    repeat: no-repeat;
+    size: 100%;
+    position: center;
+  }
+  -webkit-mask: {
+    repeat: no-repeat;
+    size: 100%;
+    position: center;
+  }
+  background-color: $color-icons;
+
+
+  &.icon-search {
+    @include mask-image("../images/icons/search.svg");
+  }
+
+  &.icon-heart {
+    @include mask-image("../images/icons/heart.svg");
+  }
+
+  &.icon-basket {
+    @include mask-image("../images/icons/shopping-cart.svg");
+  }
+
+  &.icon-eye {
+    @include mask-image("../images/icons/eye.svg");
+  }
+
+  &.icon-download {
+    @include mask-image("../images/icons/download.svg");
+  }
+
+  &.icon-email {
+    @include mask-image("../images/icons/mail.svg");
+  }
+
+  &.icon-phone {
+    @include mask-image("../images/icons/phone.svg");
+  }
+
+  &.icon-location {
+    @include mask-image("../images/icons/map-pin.svg");
+  }
+
+  &.icon-play {
+    @include mask-image("../images/icons/media-play-symbol.svg");
+  }
+
+  &.icon-facebook {
+    @include mask-image("../images/icons/facebook.svg");
+  }
+
+  &.icon-youtube {
+    @include mask-image("../images/icons/youtube.svg");
+  }
+
+  &.icon-instagram {
+    @include mask-image("../images/icons/instagram.svg");
+  }
+
+  &.icon-white {
+    background-color: #ffffff;
+  }
+
+  &.icon-green {
+    background-color: $color-green;
+  }
+
+  &.icon-violet {
+    background-color: $color-button;
+  }
+
+  &.icon-sm {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.type-pay {
+  color: $color-button;
+  font-size: 15px;
+}
+
+.type-free {
+  color: $color-green;
+  font-size: 15px;
+}
+
+/*********************MAIN STYLES*************/
+body {
+  background-color: $color-grey;
+
+  nav.navbar {
+    .navbar-brand {
+      h4 {
+        font-size: 18px;
+        margin-top: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-top: 3px;
+      }
+    }
+
+    .input-group {
+      width: 40%;
+      margin-left: 7rem;
+
+      input, button {
+        background-color: $color-grey;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+}
+
+.navbar:nth-child(2) {
+  .nav-item {
+    .nav-link {
+      color: $color-silver;
+      font-size: 17px;
+      padding: 0;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        background-color: $color-button;
+        left: 0;
+        bottom: -5px;
+      }
+
+      &:hover::after {
+        width: 100%;
+        color: #000;
+      }
+    }
+  }
+}
+
+
+/*.card {
+  background-color: transparent;
+  border: none;
+  .card-img {
+    .myimg{
+      width: 100%;
+      background-size: cover;
+      position: relative;
+    }
+    .icon-heart{
+      position: absolute;
+      right: 5px;
+      top: 8px;
+      color: $color-icons;
+    }
+  }
+
+  .card-body {
+    padding: 0;
+  .price{
+    color: $color-button;
+  }
+    .free{
+      color: $color-green;
+    }
+    .number{
+      font-size: 13px;
+      color: grey;
+    }
+    .date{
+      font-size: 13px;
+      color: grey;
+    }
+    .mytext {
+      font-size: 18px !important;
+    }
+    .icon{
+
+    }
+  }
+}*/
+
+header {
+  .carousel {
+    .carousel-indicators {
+      li {
+        height: 15px;
+        width: 15px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 2px solid white;
+        opacity: 1;
+
+        &.active {
+          background-color: white;
+        }
+      }
+    }
+
+    .carousel-sloy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(90, 7, 125, 0.5);
+
+      h3 {
+        width: 440px;
+        margin-top: 50px;
+        margin-right: 80px;
+      }
+    }
+  }
+}
+
+main {
+  section {
+    &#videos, &#audio-books {
+      h3 {
+        font-size: 22px;
+      }
+
+      .nav {
+        .nav-item {
+          .nav-link {
+            color: $color-silver;
+
+            &:after {
+              content: '';
+              height: 2px;
+              background-color: $color-button;
+              display: block;
+              transform: scaleX(0);
+              transition-duration: 1s;
+            }
+
+            &:hover {
+              color: #000;
+
+              &:after {
+                transform: scaleX(1) translateY(5px);
+              }
+            }
+          }
+        }
+      }
+
+      a.position-absolute {
+        right: 10px;
+        top: 10px;
+      }
+
+      .d-flex {
+        font-size: 13px;
+        color: $color-icons;
+      }
+
+      .line {
+        height: 10px;
+        width: 1px;
+        background-color: $color-icons;
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+    }
+
+    &#freeaudio {
+      h3 {
+        font-size: 22px;
+      }
+
+      .container {
+        .row {
+          .col-md-6 {
+            .card {
+              p {
+                font-size: 13px;
+                color: $color-silver;
+              }
+
+              .col-md-8 {
+
+                padding-right: 2rem;
+
+                .progress {
+                  height: 8px;
+                  border: 1px solid $color-grey;
+                  background-color: white;
+                  overflow: unset;
+
+                  .progress-bar {
+                    background-color: #9d69b1;
+                  }
+                }
+
+                .mybtn {
+                  background-color: $color-button;
+                  width: 50px;
+                  height: 50px;
+                  position: absolute;
+                  top: -21.5px;
+                  left: 0;
+                }
+
+                a.position-absolute {
+                  top: 10px;
+                  right: 25px;
+                }
+
+                .d-flex {
+                  color: $color-silver;
+                  font-size: 13px;
+                  margin-top: 4rem;
+
+                  .btn {
+                    background-color: $color-button;
+                    border-radius: 10px;
+                    padding: 5px 20px;
+                    font-size: 13px;
+                    margin-top: -5px;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+section {
+  &#audio-books {
+    .col {
+      padding-right: 0 !important;
+    }
+
+    .card {
+      background-color: transparent;
+      border: none;
+      overflow: hidden;
+
+      .card-img {
+        width: 100%;
+        &:hover {
+          opacity: 40%;
+
+          &.hover-icon {
+            visibility: initial;
+          }
+        }
+      }
+
+      .hover-icon {
+        position: absolute;
+        left: 65px;
+        top: 135px;
+        display: none;
+        visibility: hidden;
+      }
+
+      .mybasket, .myheart {
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: white;
+      }
+
+      .type-pay, .type-free {
+        background-color: white;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 6px 45px 6px 45px;
+        transform: rotate(45deg);
+        right: -35px;
+        top: 11px;
+      }
+    }
+
+    .authors {
+      line-height: 3px;
+      margin-top: 14px;
+    }
+
+  }
+}
+
+.button {
+  .mybutton {
+    padding: 10px 26px;
+    box-sizing: border-box;
+    background-color: $color-button;
+    color: white;
+    margin-left: 47%;
+    border: none;
+    border-radius: 8px;
+  }
+}
+
+.background {
+  background-image: url("../images/images/bg_1.png");
+  width: 100%;
+  position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .col-md-4 {
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    .kitob {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.mycontainer {
+  .row {
+    margin-left: 155px;
+  }
+}
+
+.footer-background {
+  background-image: url("../images/images/footer_bg.png");
+  width: 100%;
+  background-repeat: no-repeat;
+
+  .logo {
+    margin-top: 200px;
+
+    h5 {
+
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .col-md-5 {
+    .payments {
+      box-sizing: border-box;
+      background-color: white;
+      padding: 20px 8px 12px 44px;
+      border-radius: 15px;
+      margin-top: 50px;
+    }
+  }
+}
+
+.line {
+  background-color: #A0A0A0;
+  height: 2px;
+  width: 100%;
+  margin-top: -58px;
+}
+
+.col-md-3 {
+  .nav {
+    margin-top: 210px;
+
+    .nav-link {
+      font-size: 14px;
+      padding: 1px 2rem;
+    }
+  }
+}
+
+.second {
+  margin-top: 210px;
+
+  .icon-phone {
+    margin-top: 0.5rem;
+  }
+
+  .info {
+    font-size: 14px;
+  }
+
+  .adress {
+    font-size: 13.5px;
+  }
+}
+
+.social {
+  .nav-link {
+    padding: 0.5rem;
+  }
+}
+
+/********************MEDIA STYLE*************************/
+
+@media (max-width: 576px) {
+  body {
+    nav.navbar {
+      .navbar-brand {
+        margin-right: 0;
+
+        h4 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .input-group {
+        width: 100%;
+        margin-left: 0;
+      }
+
+    }
+
+    header {
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            &:after {
+              content: '';
+              position: absolute;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              top: 0;
+              background-color: rgba(90, 7, 125, 0.5);
+            }
+
+            .carousel-sloy {
+              position: relative;
+              z-index: 3;
+
+              h3 {
+                margin: 0 0 3rem 1rem;
+                font-size: 21px;
+              }
+            }
+          }
+        }
+      }
+    }
+    footer{
+      .footer-background{
+        background-size: cover;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
